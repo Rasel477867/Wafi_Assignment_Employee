@@ -1,0 +1,117 @@
+﻿@using EmployeesCore.EntityModel
+@model IEnumerable<Employee>
+
+<p>
+    <a asp-action="Create" asp-controller="Employee">Create New Employee</a>
+</p>
+<div>
+    <label>Name  <input type="text" placeholder="name" id="nameSearchBox"></label>
+    <label>Email <input type="text" placeholder="designation" id="Email"></label>
+</div>
+<br />
+<br />
+    <table class="table border-3 custom-border" id="tbid">
+
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                FullName
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                <img src="@item.ImageUrl" style="width:80px; height:80px;" class=" border-1 rounded-circle " />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(x => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+        
+                <td>
+                    @Html.DisplayFor(modelItem => item.DOB)
+                </td>
+           
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" ><i class="bi bi-pencil-square"></i></a>&nbsp;
+                    <a href="javascript:void(0)" onclick="Delete('@item.Id')"> <i class="bi bi-trash"></i> </a>
+                 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/lib/datatables/js/datatables.bootstrap.js"></script>
+    <script src="~/lib/datatables/js/jquery.datatables.min.js"></script>
+
+    <script>
+      
+
+        $(document).ready(function () {
+            // Initialize the DataTable
+            var table = $('#tbid').DataTable();
+
+            // Custom search for Name (Title) column
+            $('#nameSearchBox').on('keyup', function () {
+                table.columns(1).search(this.value).draw(); // Column 1 corresponds to Name/Title
+            });
+
+            // Custom search for Designation (Description) column
+            $('#Email').on('keyup', function () {
+                table.columns(2).search(this.value).draw(); // Column 2 corresponds to Designation/Description
+            });
+        });
+
+
+    </script>
+
+}
+
+
+@section style {
+    <style>
+        .custom-border {
+            border-left: 1px solid #686868; 
+            border-right: 1px solid #686868; 
+            border-top:1px solid  #686868;
+            border-collapse: collapse; 
+        }
+    </style>
+
+    <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/jquery.datatables_themeroller.css" rel="stylesheet" />
+
+    <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
+    <link href="~/lib/datatables/css/jquery.datatables_themeroller.css" rel="stylesheet" />
+}

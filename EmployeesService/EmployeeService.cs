@@ -16,30 +16,30 @@ namespace EmployeesService
         {
             _unitofwork = employeeRepositoryUnitOfWork;
         }
-        public async Task<bool> Add(Employee Entity)
+        public async Task<bool> AddAsync(Employee Entity)
         {
            await _unitofwork.EmployeeRepository.Add(Entity);
             return await _unitofwork.CompleteAsync();
 
         }
 
-        public async Task<bool> Delete(Employee Entity)
+        public async Task<bool> DeleteAsync(Employee Entity)
         {
             await _unitofwork.EmployeeRepository.Delete(Entity);
             return await _unitofwork.CompleteAsync();
         }
 
-        public async Task<List<Employee>> GetAll()
+        public async Task<List<Employee>> GetAllAsync()
         {
            return await _unitofwork.EmployeeRepository.GetAll();
         }
 
-        public async Task<Employee> GetById(Guid id)
+        public async Task<Employee> GetByIdAsync(Guid id)
         {
             return await _unitofwork.EmployeeRepository.GetById(id);
         }
 
-        public async Task<bool> Update(Employee Entity)
+        public async Task<bool> UpdateAsync(Employee Entity)
         {
             await _unitofwork.EmployeeRepository.Update(Entity);
             return await _unitofwork.CompleteAsync();

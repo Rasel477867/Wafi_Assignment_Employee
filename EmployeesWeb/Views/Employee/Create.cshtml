@@ -1,0 +1,95 @@
+﻿@model EmployeesWeb.Models.EmployeeView
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-6">
+
+                    <div class="form-group">
+                        <label asp-for="FirstName"></label>
+                        <input type="text" asp-for="FirstName" class="form-control form-control-medium">
+                        <span class="text-danger" asp-validation-for="FirstName"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label asp-for="LastName"></label>
+                        <input type="text" asp-for="LastName" class="form-control form-control-medium">
+                        <span class="text-danger" asp-validation-for="LastName"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input type="email" asp-for="Email" class="form-control form-control-medium">
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="col-6">
+
+                    <div class="form-group">
+                        <label asp-for="Mobile"></label>
+                        <input type="text" asp-for="Mobile" class="form-control form-control-medium">
+                        <span class="text-danger" asp-validation-for="Mobile"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label asp-for="DOB"></label>
+                        <!-- Updated Date Input for Date Picker -->
+                        <input type="text" asp-for="DOB" value="@DateOnly.MinValue" class="form-control form-control-medium bs-datepicker" placeholder="dd-MMM-yyyy">
+                        <span class="text-danger" asp-validation-for="DOB"></span>
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <label for="customFile" class="form-label">Choose Photo</label>
+                        <input asp-for="Image" class="form-control" id="customFile">
+                        <span class="text-danger" asp-validation-for="Image"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <br />
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+  @*   @await Html.RenderPartialAsync("_ValidationScriptsPartial") *@
+
+    <!-- Include Bootstrap Datepicker JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Initialize Date Picker -->
+    <script>
+        $(document).ready(function () {
+            $('.bs-datepicker').datepicker({
+                format: "dd-M-yyyy",
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
+}
