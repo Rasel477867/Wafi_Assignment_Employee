@@ -22,10 +22,10 @@ namespace EmployeesCore.EntityModel
 
         [Display(Name ="Date of Birth")]
         [Required]
-        public DateTime? DOB { get; set; }
+        public DateOnly? DOB { get; set; }
         [Required]
         public string Mobile { get; set; }
-        [Display(Name = "Image Url")]
+        [Display(Name = "Photo")]
         public string? ImageUrl { get; set; }
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -34,13 +34,6 @@ namespace EmployeesCore.EntityModel
         [NotMapped]
         public IFormFile? Image { get; set; }
 
-        [NotMapped]
-        public string FullName
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
-        }
+       
     }
 }

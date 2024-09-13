@@ -9,11 +9,11 @@ namespace EmployeesService.Contacts
 {
     public interface IEmployeeService
     {
-        Task<Employee> GetById(Guid id);
-        Task<List<Employee>> GetAll();
-        Task<bool> Update(Employee Entity);
-        Task<bool> Delete(Employee Entity);
-        Task<bool> Add(Employee Entity);
+        Task<Employee> GetByIdAsync(Guid id);
+        Task<List<Employee>> GetAllAsync();
+        Task<bool> UpdateAsync(Employee Entity);
+        Task<bool> DeleteAsync(Employee Entity);
+        Task<bool> AddAsync(Employee Entity);
 
     }
 }

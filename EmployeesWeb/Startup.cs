@@ -1,4 +1,8 @@
-﻿using EmployeesRepository.Data;
+﻿using EmployeesRepository;
+using EmployeesRepository.Contacts;
+using EmployeesRepository.Data;
+using EmployeesService;
+using EmployeesService.Contacts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +27,8 @@ namespace EmployeesWeb
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // All Dependency Injection here
+            builder.Services.AddTransient<IEmployeeRepositoryUnitOfWork, EmployeeRepositoryUnitOfWork>();
+            builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 
         }
     
