@@ -17,13 +17,15 @@ namespace EmployeesWeb
         private static void ConfigureServices(WebApplicationBuilder builder)
         {
             builder.Services.AddControllersWithViews();
-            //Dbcontext Dependency Injection
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+         
+        //Dbcontext Dependency Injection
+        builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // All Dependency Injection here
 
         }
+    
         private static void Configure(WebApplication app)
         {
             if (!app.Environment.IsDevelopment())
