@@ -1494,6 +1494,53 @@
             "rid": "win"
           }
         }
+      },
+      "EmployeesCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EmployeesCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeesCore.dll": {}
+        }
+      },
+      "EmployeesRepository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "EmployeesCore": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EmployeesRepository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeesRepository.dll": {}
+        }
+      },
+      "EmployeesService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "EmployeesRepository": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EmployeesService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EmployeesService.dll": {}
+        }
       }
     }
   },
@@ -4042,10 +4089,26 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "EmployeesCore/1.0.0": {
+      "type": "project",
+      "path": "../EmployeesCore/EmployeesCore.csproj",
+      "msbuildProject": "../EmployeesCore/EmployeesCore.csproj"
+    },
+    "EmployeesRepository/1.0.0": {
+      "type": "project",
+      "path": "../EmployeesRepository/EmployeesRepository.csproj",
+      "msbuildProject": "../EmployeesRepository/EmployeesRepository.csproj"
+    },
+    "EmployeesService/1.0.0": {
+      "type": "project",
+      "path": "../EmployeesService/EmployeesService.csproj",
+      "msbuildProject": "../EmployeesService/EmployeesService.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "EmployeesService >= 1.0.0",
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
@@ -4078,7 +4141,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesService\\EmployeesService.csproj": {
+              "projectPath": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesService\\EmployeesService.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
