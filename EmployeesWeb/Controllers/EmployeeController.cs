@@ -74,7 +74,6 @@ namespace EmployeesWeb.Controllers
                     // Resize the image
                     var resizedImage = new Bitmap(img, new Size(300, 300));
 
-                    // Save the resized image to the desired path
                     resizedImage.Save(path);
                 }
             }
