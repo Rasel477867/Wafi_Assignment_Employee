@@ -79,6 +79,38 @@ namespace EmployeesWeb.Controllers
                 }
             }
         }
+        public async Task<IActionResult>Edit(Guid Id)
+        {
+            var employee= await _employeeService.GetByIdAsync(Id);
+            return View(employee);
+        }
+        [HttpPost]
+        public async Task<IActionResult>Edit(Employee employee)
+        {
+            if (employee.Image == null)
+            {
+              await _employeeService.UpdateAsync(employee);
+            }
+            else
+            {
+                var path = _webHostEnvironment.WebRootPath;
+
+                // Generate a new GUID and use the file's original extension
+                var fileExtension = Path.GetExtension(employee.Image.FileName);
+                var uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
+                var filePath = "Images/" + uniqueFileName;
+                var fullPath = Path.Combine(path, filePath);
+
+                // Resize and upload image
+                FileUpload(employee.Image, fullPath);
+                employee.ImageUrl = filePath;
+
+                await _employeeService.UpdateAsync(employee);
+                
+            }
+            return RedirectToAction("Index");
+           
+        }
        
 
 
