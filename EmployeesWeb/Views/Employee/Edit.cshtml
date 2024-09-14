@@ -1,4 +1,4 @@
-﻿@model EmployeesWeb.Models.EmployeeView
+﻿@model EmployeesCore.EntityModel.Employee
 
 @{
     ViewData["Title"] = "Create";
@@ -10,11 +10,17 @@
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Create" enctype="multipart/form-data">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-6">
 
-                    <div class="form-group">
+                    <div class="form-group" hidden>
+                        <label asp-for="Id"></label>
+                        <input type="text" asp-for="Id" class="form-control form-control-medium">
+                        <span class="text-danger" asp-validation-for="Id"></span>
+                    </div>
+                    
+               <div class="form-group">
                         <label asp-for="FirstName"></label>
                         <input type="text" asp-for="FirstName" class="form-control form-control-medium">
                         <span class="text-danger" asp-validation-for="FirstName"></span>
@@ -59,13 +65,14 @@
                     <div class="form-group">
                         <label asp-for="Image"></label>
                         <label for="customFile" class="form-label">Choose Photo</label>
+                        <input asp-for="ImageUrl" class="form-control" id="customFile" hidden>
                         <input asp-for="Image" class="form-control" id="customFile">
                         <span class="text-danger" asp-validation-for="Image"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Submit" class="btn btn-primary" />
+                    <input type="submit" value="Update" class="btn btn-primary" />
                 </div>
             </div>
         </form>
@@ -78,7 +85,7 @@
 </div>
 
 @section Scripts {
-  @*   @await Html.RenderPartialAsync("_ValidationScriptsPartial") *@
+    @*   @await Html.RenderPartialAsync("_ValidationScriptsPartial") *@
 
     <!-- Include Bootstrap Datepicker JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
