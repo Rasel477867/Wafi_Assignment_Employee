@@ -1,16 +1,23 @@
 ﻿@using EmployeesCore.EntityModel
 @model IEnumerable<Employee>
 
-<p>
-    <a asp-action="Create" asp-controller="Employee">Create New Employee</a>
-</p>
-<div>
-    <label>Name  <input type="text" placeholder="name" id="nameSearchBox"></label>
-    <label>Email <input type="text" placeholder="designation" id="Email"></label>
+    <br />
+ 
+
+<div class="search-container">
+    <form asp-action="Index" method="get" class="form-inline search-box">
+        <div class="form-group">
+            <input type="text" name="Name" class="form-control" placeholder="Name" id="nameSearchBox" />
+            <input type="text" name="DateOfBirth" class="form-control" placeholder="Date of Birth" id="DobSearchbox" />
+            <input type="email" name="Email" class="form-control" placeholder="Email" id="EmailSearchbox" />
+            <input type="text" name="Mobile" class="form-control" placeholder="Mobile" id="MobileSearchbox" />
+            <button type="submit" class="btn btn-primary search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
 </div>
-<br />
-<br />
-<table class="table border-3 custom-border" id="tbid">
+<table class="table border-3 custom-border bg-gradient" id="tbid">
 
     <thead>
         <tr>
@@ -20,7 +27,7 @@
             <th>
                 FullName
             </th>
-            <th>
+            <th class="text-black">
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
@@ -43,8 +50,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(x => item.LastName)
                 </td>
-                <td>
+              @*   <td >
                     @Html.DisplayFor(modelItem => item.Email)
+                </td> *@
+                <td>
+                    @item.Email
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Mobile)
@@ -123,16 +133,35 @@
 
         $(document).ready(function () {
             // Initialize the DataTable
-            var table = $('#tbid').DataTable();
+            var table = $('#tbid').DataTable({
+                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
 
+                // Enable pagination with full pagination controls (like 1, 2, 3, 4)
+                "pagingType": "full_numbers",
+
+                // Set default page length
+                "pageLength": 5,
+
+                // Customize the layout to move pagination to the right
+                "dom": '<"top"l>rt<"bottom"ip><"clear">',
+
+            });
             // Custom search for Name (Title) column
             $('#nameSearchBox').on('keyup', function () {
                 table.columns(1).search(this.value).draw(); // Column 1 corresponds to Name/Title
             });
 
             // Custom search for Email column
-            $('#Email').on('keyup', function () {
+            $('#EmailSearchbox').on('keyup', function () {
                 table.columns(2).search(this.value).draw(); // Column 2 corresponds to Email
+            });     
+            $('#MobileSearchbox').on('keyup', function () {
+                table.columns(3).search(this.value).draw(); // Column 1 corresponds to Name/Title
+            });
+
+            // Custom search for Email column
+            $('#DobSearchbox').on('keyup', function () {
+                table.columns(4).search(this.value).draw(); // Column 2 corresponds to Email
             });
         });
     </script>
@@ -140,11 +169,49 @@
 }
 
 @section style {
+ 
     <style>
+  
         .custom-border {
             border: 2px solid #686868;
             border-collapse: collapse;
         }
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .search-box {
+            border: 2px solid #ccc;
+            / Border around the search box / border-radius: 10px;
+            / Rounded corners / padding: 10px;
+            / Padding inside the box / display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-control {
+            width: calc(100% / 5 - 15px);
+            / Adjust input field width /
+        }
+
+        .search-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        
     </style>
 
     <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
