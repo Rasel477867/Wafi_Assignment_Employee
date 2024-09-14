@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ptIDcSIfNCBiSupoJTtbylYkecwuF6vL1eQl7o3cj7o=",
+  "Hash": "EQM8pYcC4YVBprkzs1VwBhBGDoqG+27JwX/ZxPD8Y8o=",
   "Source": "EmployeesWeb",
   "BasePath": "_content/EmployeesWeb",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\53ac88e8-43bb-4cd4-9400-b9d974359deb.jpeg"
+    },
+    {
+      "Identity": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\5ee1479e-3a33-432c-b905-f1a8f965ab09.jpg",
+      "SourceId": "EmployeesWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\",
+      "BasePath": "_content/EmployeesWeb",
+      "RelativePath": "Images/5ee1479e-3a33-432c-b905-f1a8f965ab09.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\5ee1479e-3a33-432c-b905-f1a8f965ab09.jpg"
     },
     {
       "Identity": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\8b5b316f-33f2-4751-8cfb-3532951ddf06.jpg",
@@ -319,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\d1ca830d-3d5f-4598-941f-5c3864c45790.jpg"
+    },
+    {
+      "Identity": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\d22e91c1-38ec-4ca8-817c-a3c5459f7b1f.jpeg",
+      "SourceId": "EmployeesWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\",
+      "BasePath": "_content/EmployeesWeb",
+      "RelativePath": "Images/d22e91c1-38ec-4ca8-817c-a3c5459f7b1f.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\d22e91c1-38ec-4ca8-817c-a3c5459f7b1f.jpeg"
     },
     {
       "Identity": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\d432a24a-f0ea-4dcb-9e90-d02b89d8b090.jpeg",

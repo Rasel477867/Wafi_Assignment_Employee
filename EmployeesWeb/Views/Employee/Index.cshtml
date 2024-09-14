@@ -10,7 +10,7 @@
 </div>
 <br />
 <br />
-    <table class="table border-3 custom-border" id="tbid">
+<table class="table border-3 custom-border" id="tbid">
 
     <thead>
         <tr>
@@ -38,7 +38,7 @@
         {
             <tr>
                 <td>
-                <img src="@item.ImageUrl" style="width:80px; height:80px;" class=" border-1 rounded-circle " />
+                    <img src="@item.ImageUrl" style="width:100px; height:100px;" class=" border-1 rounded-circle " />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(x => item.LastName)
@@ -49,16 +49,16 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Mobile)
                 </td>
-        
+
                 <td>
                     @Html.DisplayFor(modelItem => item.DOB)
                 </td>
-           
+
 
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" ><i class="bi bi-pencil-square"></i></a>&nbsp;
-                    <a href="javascript:void(0)" onclick="Delete('@item.Id')"> <i class="bi bi-trash"></i> </a>
-                 
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>&nbsp;
+                    <a href="javascript:void(0)" onclick="delete_Data('@item.Id')"> <i class="bi bi-trash"></i> </a>
+
                 </td>
             </tr>
         }
@@ -72,9 +72,54 @@
     }
     <script src="~/lib/datatables/js/datatables.bootstrap.js"></script>
     <script src="~/lib/datatables/js/jquery.datatables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-      
+        function delete_Data(id) {
+            // Show confirmation modal using SweetAlert2
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You want to delete this?",
+                icon: 'warning',
+                showCancelButton: true,
+                // confirmButtonColor: '#3085d6',
+                // cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // If 'Yes' is clicked, proceed with the delete action
+                    $.ajax({
+                        type: "POST",
+                        url: "/Employee/Delete",
+                        data: { id: id },
+                        success: function (response) {
+                            // Show success message
+                            Swal.fire(
+                                'Deleted!',
+                                'The record has been deleted.',
+                                'success'
+                            ).then(() => {
+                                location.reload(); // Reload the page after successful deletion
+                            });
+                        },
+                        error: function (response) {
+                            Swal.fire(
+                                'Error!',
+                                'There was a problem deleting the record.',
+                                'error'
+                            );
+                        }
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    Swal.fire(
+                        'Cancelled',
+                        'Your record is safe :)',
+                        'info'
+                    );
+                }
+            });
+        }
 
         $(document).ready(function () {
             // Initialize the DataTable
@@ -85,32 +130,24 @@
                 table.columns(1).search(this.value).draw(); // Column 1 corresponds to Name/Title
             });
 
-            // Custom search for Designation (Description) column
+            // Custom search for Email column
             $('#Email').on('keyup', function () {
-                table.columns(2).search(this.value).draw(); // Column 2 corresponds to Designation/Description
+                table.columns(2).search(this.value).draw(); // Column 2 corresponds to Email
             });
         });
-
-
     </script>
 
 }
 
-
 @section style {
     <style>
         .custom-border {
-            border-left: 2px solid #686868; 
-            border-right: 2px solid #686868; 
-            border-top:2px solid  #686868;
-            border-bottom:2px solid  #686868;
-            border-collapse: collapse; 
+            border: 2px solid #686868;
+            border-collapse: collapse;
         }
     </style>
 
     <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
     <link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
     <link href="~/lib/datatables/css/jquery.datatables_themeroller.css" rel="stylesheet" />
-
-   
 }

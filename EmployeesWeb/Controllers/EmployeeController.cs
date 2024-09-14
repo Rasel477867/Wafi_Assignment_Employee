@@ -111,8 +111,14 @@ namespace EmployeesWeb.Controllers
             return RedirectToAction("Index");
            
         }
-       
 
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var employee=await _employeeService.GetByIdAsync(id);
+            var result = await _employeeService.DeleteAsync(employee);
+           
+            return Json(result);
+        }
 
 
     }
