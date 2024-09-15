@@ -1,4 +1,5 @@
 ﻿using EmployeesCore.EntityModel;
+using EmployeesRepository.Contacts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace EmployeesService.Contacts
         Task<bool> UpdateAsync(Employee Entity);
         Task<bool> DeleteAsync(Employee Entity);
         Task<bool> AddAsync(Employee Entity);
+        Task<(IEnumerable<Employee> Employees, int TotalCount)> GetEmployeesAsync(EmployeeQuery searchString, int page, int pageSize);
 
     }
 }

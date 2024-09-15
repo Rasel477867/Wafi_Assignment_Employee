@@ -5,24 +5,56 @@
       "PackagePath": "staticwebassets\\EmployeesWeb.bundle.scp.css"
     },
     {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\04c47fb4-101c-4a63-bf2c-4fac92b9f58e.jpeg",
+      "PackagePath": "staticwebassets\\Images\\04c47fb4-101c-4a63-bf2c-4fac92b9f58e.jpeg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\1c199747-27c3-40d6-88cc-8edd196422fa.jpg",
+      "PackagePath": "staticwebassets\\Images\\1c199747-27c3-40d6-88cc-8edd196422fa.jpg"
+    },
+    {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\34319a3d-a5ad-4e55-9c22-e0abcf56d51f.jpg",
       "PackagePath": "staticwebassets\\Images\\34319a3d-a5ad-4e55-9c22-e0abcf56d51f.jpg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\3701e994-b8bf-48e3-9693-5e1fd00ff9ca.jpg",
+      "PackagePath": "staticwebassets\\Images\\3701e994-b8bf-48e3-9693-5e1fd00ff9ca.jpg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\38fb7cbc-356f-436e-9bb8-cbd0b3b49fee.jpg",
       "PackagePath": "staticwebassets\\Images\\38fb7cbc-356f-436e-9bb8-cbd0b3b49fee.jpg"
     },
     {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\409b749a-a876-4f78-b4de-f9f6e021e736.jpeg",
+      "PackagePath": "staticwebassets\\Images\\409b749a-a876-4f78-b4de-f9f6e021e736.jpeg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\4b742c1e-72cf-4ef1-8537-f1876dfc201d.jpeg",
+      "PackagePath": "staticwebassets\\Images\\4b742c1e-72cf-4ef1-8537-f1876dfc201d.jpeg"
+    },
+    {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\53ac88e8-43bb-4cd4-9400-b9d974359deb.jpeg",
       "PackagePath": "staticwebassets\\Images\\53ac88e8-43bb-4cd4-9400-b9d974359deb.jpeg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\5a215981-cc81-41ec-a939-38e3b8ecbc3d.jpeg",
+      "PackagePath": "staticwebassets\\Images\\5a215981-cc81-41ec-a939-38e3b8ecbc3d.jpeg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\5ee1479e-3a33-432c-b905-f1a8f965ab09.jpg",
       "PackagePath": "staticwebassets\\Images\\5ee1479e-3a33-432c-b905-f1a8f965ab09.jpg"
     },
     {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\644620ff-3cbe-41d5-b5fc-a73fc452476f.jpg",
+      "PackagePath": "staticwebassets\\Images\\644620ff-3cbe-41d5-b5fc-a73fc452476f.jpg"
+    },
+    {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\71770e3f-637c-4fab-b7e9-3888da075a47.jpg",
       "PackagePath": "staticwebassets\\Images\\71770e3f-637c-4fab-b7e9-3888da075a47.jpg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\7e0cea72-1177-45c7-a82e-0cca249b3da3.jpeg",
+      "PackagePath": "staticwebassets\\Images\\7e0cea72-1177-45c7-a82e-0cca249b3da3.jpeg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\8b5b316f-33f2-4751-8cfb-3532951ddf06.jpg",
@@ -41,12 +73,24 @@
       "PackagePath": "staticwebassets\\Images\\aung-swam-nyi-8OWcgGeB-Rk-unsplash.jpg"
     },
     {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\b5dec010-171d-4d22-bcd7-c3a02229b259.jpeg",
+      "PackagePath": "staticwebassets\\Images\\b5dec010-171d-4d22-bcd7-c3a02229b259.jpeg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\baf5e2d7-ba6a-4b37-a0ec-82de789e8893.jpeg",
+      "PackagePath": "staticwebassets\\Images\\baf5e2d7-ba6a-4b37-a0ec-82de789e8893.jpeg"
+    },
+    {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\c0327ece-023f-455b-823e-d1f86210a0e8.jpg",
       "PackagePath": "staticwebassets\\Images\\c0327ece-023f-455b-823e-d1f86210a0e8.jpg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\c312d9e7-59cd-4adc-b4a4-988812effe73.jpeg",
       "PackagePath": "staticwebassets\\Images\\c312d9e7-59cd-4adc-b4a4-988812effe73.jpeg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\c459fbc5-e280-4087-88b9-8d08597c645f.jpeg",
+      "PackagePath": "staticwebassets\\Images\\c459fbc5-e280-4087-88b9-8d08597c645f.jpeg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\c7bab982-93b8-45ab-bb24-3ce6e0b4f30d.jpg",
@@ -79,6 +123,10 @@
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\e2c6d964-96e0-480a-87cd-21a7b6033383.jpg",
       "PackagePath": "staticwebassets\\Images\\e2c6d964-96e0-480a-87cd-21a7b6033383.jpg"
+    },
+    {
+      "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\f305ffb7-e6ea-44e3-9f5f-e0b781eb2c02.jpeg",
+      "PackagePath": "staticwebassets\\Images\\f305ffb7-e6ea-44e3-9f5f-e0b781eb2c02.jpeg"
     },
     {
       "Id": "D:\\Wafi_solution\\Wafi_Assignment\\EmployeesWeb\\wwwroot\\Images\\pexels-pixabay-56866.jpg",

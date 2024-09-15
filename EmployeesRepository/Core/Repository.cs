@@ -35,8 +35,8 @@ namespace EmployeesRepository.Core
         {
             await Task.Run(() =>
             {
-                Entity.IsDeleted = true;
-                table.Update(Entity);
+                table.Remove(Entity);
+             
               
             });
       
@@ -45,12 +45,12 @@ namespace EmployeesRepository.Core
 
         public virtual async Task<List<T>> GetAll()
         {
-            return await table.Where(c => !c.IsDeleted).ToListAsync();
+            return await table.ToListAsync();
         }
 
         public virtual async Task<T> GetById(Guid id)
         {
-            var query=  table.Where(x=>!x.IsDeleted && x.Id == id).AsQueryable();
+            var query=  table.Where(x=> x.Id == id).AsQueryable();
 
             return await query.AsNoTracking().FirstOrDefaultAsync();
         }

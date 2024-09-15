@@ -18,3 +18,23 @@ D:\Wafi_solution\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\refint\Employ
 D:\Wafi_solution\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.pdb
 D:\Wafi_solution\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.genruntimeconfig.cache
 D:\Wafi_solution\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\ref\EmployeesService.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesService.deps.json
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesService.runtimeconfig.json
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesService.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesService.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesCore.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesRepository.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesRepository.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesService\bin\Debug\net8.0\EmployeesCore.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.csproj.AssemblyReference.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.AssemblyInfoInputs.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.AssemblyInfo.cs
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.csproj.CoreCompileInputs.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.sourcelink.json
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.csproj.CopyComplete
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\refint\EmployeesService.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\EmployeesService.genruntimeconfig.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesService\obj\Debug\net8.0\ref\EmployeesService.dll

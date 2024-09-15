@@ -11,5 +11,7 @@ namespace EmployeesRepository.Contacts
 {
     public interface IEmployeeRepository:IRepository<Employee>
     {
+        IQueryable<Employee> GetEmployeesAsync();
+
     }
 }
