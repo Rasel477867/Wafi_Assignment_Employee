@@ -14562,8 +14562,9 @@ textarea.form-control-lg {
 }
 .bg-light-custom {
     background-color: #1C646D;
-    color:bisque
+
 }
 .bg-color-custom {
-    background-color: #CEF09D;
+  /* // background-color: #CEF09D;*/
+    background-color: #1C646D;
 }

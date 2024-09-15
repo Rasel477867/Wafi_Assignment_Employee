@@ -1,18 +1,3 @@
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.deps.json
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.runtimeconfig.json
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.dll
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.pdb
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.csproj.AssemblyReference.cache
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.GeneratedMSBuildEditorConfig.editorconfig
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.AssemblyInfoInputs.cache
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.AssemblyInfo.cs
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.csproj.CoreCompileInputs.cache
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.sourcelink.json
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.dll
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\refint\EmployeesCore.dll
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.pdb
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.genruntimeconfig.cache
-D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\ref\EmployeesCore.dll
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.deps.json
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.runtimeconfig.json
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.dll
@@ -28,3 +13,18 @@ D:\New folder (5)\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\refint\Employee
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.pdb
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.genruntimeconfig.cache
 D:\New folder (5)\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\ref\EmployeesCore.dll
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.deps.json
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.runtimeconfig.json
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.dll
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\bin\Debug\net8.0\EmployeesCore.pdb
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.csproj.AssemblyReference.cache
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.AssemblyInfoInputs.cache
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.AssemblyInfo.cs
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.csproj.CoreCompileInputs.cache
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.sourcelink.json
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.dll
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\refint\EmployeesCore.dll
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.pdb
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\EmployeesCore.genruntimeconfig.cache
+D:\Wafi_solution\Wafi_Assignment\EmployeesCore\obj\Debug\net8.0\ref\EmployeesCore.dll
