@@ -22,15 +22,15 @@ namespace EmployeesWeb.Controllers
 
         }
     
-        public async Task<IActionResult> Index(EmployeeQuery searchString, int page = 1)
+        public async Task<IActionResult> Index(EmployeeQuery employeeQuery, int page = 1)
         {
             int pageSize = 4;
-            var (employees, totalCount) = await _employeeService.GetEmployeesAsync(searchString, page, pageSize);
+            var (employees, totalCount) = await _employeeService.GetEmployeesAsync(employeeQuery, page, pageSize);
 
             var viewModel = new EmpViewModel
             {
                 Employees = employees,
-                SearchString = searchString,
+                employeeQuery = employeeQuery,
                 Pagination = new PaginationModel(totalCount, page, pageSize)
             };
 

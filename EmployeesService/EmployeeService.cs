@@ -42,28 +42,28 @@ namespace EmployeesService
         }
     
 
-        public async Task<(IEnumerable<Employee> Employees, int TotalCount)> GetEmployeesAsync(EmployeeQuery searchString, int page, int pageSize)
+        public async Task<(IEnumerable<Employee> Employees, int TotalCount)> GetEmployeesAsync(EmployeeQuery employeeQuery, int page, int pageSize)
         {
             int skip = (page - 1) * pageSize;
 
 
             var query = _unitofwork.EmployeeRepository.GetEmployeesAsync();
-            if (!string.IsNullOrEmpty(searchString.SName))
+            if (!string.IsNullOrEmpty(employeeQuery.SName))
             {
-                query = query.Where(x => x.FirstName.Contains(searchString.SName)
-                || x.LastName.Contains(searchString.SName));
+                query = query.Where(x => x.FirstName.Contains(employeeQuery.SName)
+                || x.LastName.Contains(employeeQuery.SName));
             }
-            if (!string.IsNullOrEmpty(searchString.SEmail))
+            if (!string.IsNullOrEmpty(employeeQuery.SEmail))
             {
-                query = query.Where(x => x.Email.Contains(searchString.SEmail));
+                query = query.Where(x => x.Email.Contains(employeeQuery.SEmail));
             }
-            if (!string.IsNullOrEmpty(searchString.SMobile))
+            if (!string.IsNullOrEmpty(employeeQuery.SMobile))
             {
-                query = query.Where(x => x.Mobile.Equals(searchString.SMobile));
+                query = query.Where(x => x.Mobile.Contains(employeeQuery.SMobile));
             }
-            if (searchString.SBirthDate!=null)
+            if (employeeQuery.SBirthDate!=null)
             {
-                query = query.Where(x => x.DOB.Equals(searchString.SBirthDate));
+                query = query.Where(x => x.DOB.Equals(employeeQuery.SBirthDate));
             }
 
            var employees=await query.Skip(skip).Take(pageSize).ToListAsync();

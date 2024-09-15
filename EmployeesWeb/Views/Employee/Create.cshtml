@@ -48,10 +48,7 @@
                     <div class="form-group">
                         <label asp-for="DOB"></label>
                         <!-- Updated Date Input for Date Picker -->
-                        <input type="text" asp-for="DOB"
-                               value="@DateOnly.FromDateTime(DateTime.Now).ToString("dd-MMM-yyyy")"
-                               class="form-control form-control-medium bs-datepicker"
-                               placeholder="dd-MMM-yyyy">
+                        <input type="date" asp-for="DOB">
                         <span class="text-danger" asp-validation-for="DOB"></span>
                     </div>
                     <br />
@@ -74,7 +71,7 @@
 
 <div>
     <br />
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-link" asp-action="Index">Back</a>
 </div>
 
 @section Scripts {

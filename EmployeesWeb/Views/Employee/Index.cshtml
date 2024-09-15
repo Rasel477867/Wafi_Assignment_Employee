@@ -5,19 +5,19 @@
 
 
 <div class="search-container">
-    <form asp-action="Index" method="get" class="form-inline search-box">
+    <form asp-action="Index" methode="get" class="form-inline search-box">
         <div class="form-group">
-            <input type="text" asp-for="SearchString.SName"  class="form-control" placeholder="Name" />
-            <input type="text" asp-for="SearchString.SBirthDate" class="form-control" placeholder="Date of Birth" />
-            <input type="email" asp-for="SearchString.SEmail" class="form-control" placeholder="Email"  />
-            <input type="text" asp-for="SearchString.SMobile" class="form-control" placeholder="Mobile"  />
-            <button type="submit" class="btn btn-primary search-btn" asp-action="Index">
+            <input type="text" name="employeeQuery.SName" class="form-control" placeholder="Name" />
+            <input type="date" name="employeeQuery.SBirthDate" class="form-control" placeholder="Date of Birth" />
+            <input type="text" name="employeeQuery.SEmail" class="form-control" placeholder="Email" />
+            <input type="text" name="employeeQuery.SMobile" class="form-control" placeholder="Mobile" />
+            <button type="submit" class="btn btn-primary search-btn" asp-action="Index" id="sreach">
                 <i class="fas fa-search"></i>
             </button>
         </div>
     </form>
 </div>
-<table class="table border-3 custom-border bg-gradient" id="tbid">
+<table class="table border-3 custom-border" id="tbid">
 
     <thead>
         <tr>
@@ -62,26 +62,60 @@
         }
     </tbody> 
 </table>
- <div class="pagination align-items-end">
-    <ul>
-        @if (Model.Pagination.HasPreviousPage)
-        {
-            <p><a asp-controller="Employee" asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage - 1)">Previous</a> &nbsp;&nbsp; </p>
-            
-        }
+<div class="d-flex justify-content-end">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end flex-wrap">
+                    <!-- First Page Icon -->
+                    <li class="page-item @(Model.Pagination.CurrentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" asp-controller="Employee" asp-action="Index"
+                         
+                           asp-route-page="1" aria-label="First">
+                            <span aria-hidden="true">&laquo;&laquo;</span>
+                        </a>
+                    </li>
 
-        @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
-        {
-            <p class="@(i == Model.Pagination.CurrentPage ? "active" : "") ">
-                <a asp-controller="Employee" asp-action="Index" asp-route-page="@i">@i</a>&nbsp;&nbsp;
-            </p>
-        }
+                    <!-- Previous Page Icon -->
+                    <li class="page-item @(Model.Pagination.HasPreviousPage ? "" : "disabled")">
+                        <a class="page-link" asp-controller="Employee" asp-action="Index"
+                       
+                           asp-route-page="@(Model.Pagination.CurrentPage - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&lsaquo;</span>
+                        </a>
+                    </li>
 
-        @if (Model.Pagination.HasNextPage)
-        {
-            <p><a asp-controller="Employee" asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage + 1)">Next</a></p>
-        }
-    </ul>
+                    <!-- Page Numbers -->
+                    @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == Model.Pagination.CurrentPage ? "active" : "")">
+                            <a class="page-link" asp-controller="Employee" asp-action="Index"
+                          
+                               asp-route-page="@i">@i</a>
+                        </li>
+                    }
+
+                    <!-- Next Page Icon -->
+                    <li class="page-item @(Model.Pagination.HasNextPage ? "" : "disabled")">
+                        <a class="page-link" asp-controller="Employee" asp-action="Index1"
+                        
+                           asp-route-page="@(Model.Pagination.CurrentPage + 1)" aria-label="Next">
+                            <span aria-hidden="true">&rsaquo;</span>
+                        </a>
+                    </li>
+
+                    <!-- Last Page Icon -->
+                    <li class="page-item @(Model.Pagination.CurrentPage == Model.Pagination.TotalPages ? "disabled" : "")">
+                        <a class="page-link" asp-controller="Employee" asp-action="Index"
+             
+                           asp-route-page="@(Model.Pagination.TotalPages)" aria-label="Last">
+                            <span aria-hidden="true">&raquo;&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 </div>
 
 
@@ -147,24 +181,10 @@
                 "paging": false,  
                 "searching": false,  
                 "ordering": true,  
+                "info": false
             });
-            
-            // $('#nameSearchBox').on('keyup', function () {
-            //     table.columns(1).search(this.value).draw();
-            // });
-
-            // // Custom search for Email column
-            // $('#EmailSearchbox').on('keyup', function () {
-            //     table.columns(2).search(this.value).draw(); // Column 2 corresponds to Email
-            // });     
-            // $('#MobileSearchbox').on('keyup', function () {
-            //     table.columns(3).search(this.value).draw(); // Column 1 corresponds to Name/Title
-            // });
-
-            // // Custom search for Email column
-            // $('#DobSearchbox').on('keyup', function () {
-            //     table.columns(4).search(this.value).draw(); // Column 2 corresponds to Email
-            // });
+          
+           
         });
     </script>
 
