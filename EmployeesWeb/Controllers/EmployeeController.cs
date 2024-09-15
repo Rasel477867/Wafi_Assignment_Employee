@@ -1,5 +1,6 @@
 ﻿using EmployeesCore.EntityModel;
 using EmployeesCore.EntityModel.Core;
+using EmployeesRepository.Contacts;
 using EmployeesService;
 using EmployeesService.Contacts;
 using EmployeesWeb.Models;
@@ -20,11 +21,22 @@ namespace EmployeesWeb.Controllers
             _webHostEnvironment = webHostEnvironment;
 
         }
-        public async Task<IActionResult> Index()
+    
+        public async Task<IActionResult> Index(EmployeeQuery searchString, int page = 1)
         {
-            var Employee=await _employeeService.GetAllAsync();
-            return View(Employee);
+            int pageSize = 4;
+            var (employees, totalCount) = await _employeeService.GetEmployeesAsync(searchString, page, pageSize);
+
+            var viewModel = new EmpViewModel
+            {
+                Employees = employees,
+                SearchString = searchString,
+                Pagination = new PaginationModel(totalCount, page, pageSize)
+            };
+
+            return View(viewModel);
         }
+
         public async Task<IActionResult> Create()
         {
             return View();
@@ -34,26 +46,26 @@ namespace EmployeesWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var obj = new Employee();
+                var employee = new Employee();
                 var path = _webHostEnvironment.WebRootPath;
 
-                // Generate a new GUID and use the file's original extension
+               
                 var fileExtension = Path.GetExtension(emp.Image.FileName);
-                var uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
-                var filePath = "Images/" + uniqueFileName;
+                var FileName = Guid.NewGuid().ToString() + fileExtension;
+                var filePath = "Images/" + FileName;
                 var fullPath = Path.Combine(path, filePath);
 
                 // Resize and upload image
                 FileUpload(emp.Image, fullPath);
 
-                obj.FirstName = emp.FirstName;
-                obj.LastName = emp.LastName;
-                obj.DOB = emp.DOB;
-                obj.Email = emp.Email;
-                obj.Mobile = emp.Mobile;
-                obj.ImageUrl = filePath;
+                employee.FirstName = emp.FirstName;
+                employee.LastName = emp.LastName;
+                employee.DOB = emp.DOB;
+                employee.Email = emp.Email;
+                employee.Mobile = emp.Mobile;
+                employee.ImageUrl = filePath;
 
-                await _employeeService.AddAsync(obj);
+                await _employeeService.AddAsync(employee);
 
                 return RedirectToAction("Index");
             }

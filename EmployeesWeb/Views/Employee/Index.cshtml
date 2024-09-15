@@ -1,17 +1,17 @@
-﻿@using EmployeesCore.EntityModel
-@model IEnumerable<Employee>
+﻿@using EmployeesWeb.Models
+@model EmpViewModel
 
-    <br />
- 
+ <br />
+
 
 <div class="search-container">
     <form asp-action="Index" method="get" class="form-inline search-box">
         <div class="form-group">
-            <input type="text" name="Name" class="form-control" placeholder="Name" id="nameSearchBox" />
-            <input type="text" name="DateOfBirth" class="form-control" placeholder="Date of Birth" id="DobSearchbox" />
-            <input type="email" name="Email" class="form-control" placeholder="Email" id="EmailSearchbox" />
-            <input type="text" name="Mobile" class="form-control" placeholder="Mobile" id="MobileSearchbox" />
-            <button type="submit" class="btn btn-primary search-btn">
+            <input type="text" asp-for="SearchString.SName"  class="form-control" placeholder="Name" />
+            <input type="text" asp-for="SearchString.SBirthDate" class="form-control" placeholder="Date of Birth" />
+            <input type="email" asp-for="SearchString.SEmail" class="form-control" placeholder="Email"  />
+            <input type="text" asp-for="SearchString.SMobile" class="form-control" placeholder="Mobile"  />
+            <button type="submit" class="btn btn-primary search-btn" asp-action="Index">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -22,58 +22,67 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
+                Photo
             </th>
             <th>
                 FullName
             </th>
             <th class="text-black">
-                @Html.DisplayNameFor(model => model.Email)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Mobile)
+               Mobile
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DOB)
+               Date Of Birth
             </th>
 
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+
+
+        @foreach (var employee in Model.Employees)
         {
             <tr>
                 <td>
-                    <img src="@item.ImageUrl" style="width:100px; height:100px;" class=" border-1 rounded-circle " />
+                    <img src="@employee.ImageUrl" style="width:100px; height:100px;" class=" border-1 rounded-circle " />
                 </td>
+                <td>@employee.FirstName @employee.LastName</td>
+                <td>@employee.Email</td>
+                <td>@employee.Mobile</td>
+                 <td>@employee.DOB</td> 
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(x => item.LastName)
-                </td>
-              @*   <td >
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td> *@
-                <td>
-                    @item.Email
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mobile)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.DOB)
-                </td>
-
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>&nbsp;
-                    <a href="javascript:void(0)" onclick="delete_Data('@item.Id')"> <i class="bi bi-trash"></i> </a>
+                    <a asp-action="Edit" asp-route-id="@employee.Id"><i class="bi bi-pencil-square"></i></a>&nbsp;
+                    <a href="javascript:void(0)" onclick="delete_Data('@employee.Id')"> <i class="bi bi-trash"></i> </a>
 
                 </td>
             </tr>
         }
-    </tbody>
+    </tbody> 
 </table>
+ <div class="pagination align-items-end">
+    <ul>
+        @if (Model.Pagination.HasPreviousPage)
+        {
+            <p><a asp-controller="Employee" asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage - 1)">Previous</a> &nbsp;&nbsp; </p>
+            
+        }
+
+        @for (int i = 1; i <= Model.Pagination.TotalPages; i++)
+        {
+            <p class="@(i == Model.Pagination.CurrentPage ? "active" : "") ">
+                <a asp-controller="Employee" asp-action="Index" asp-route-page="@i">@i</a>&nbsp;&nbsp;
+            </p>
+        }
+
+        @if (Model.Pagination.HasNextPage)
+        {
+            <p><a asp-controller="Employee" asp-action="Index" asp-route-page="@(Model.Pagination.CurrentPage + 1)">Next</a></p>
+        }
+    </ul>
+</div>
 
 
 @section Scripts {
@@ -132,37 +141,30 @@
         }
 
         $(document).ready(function () {
-            // Initialize the DataTable
+            
             var table = $('#tbid').DataTable({
-                "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
-
-                // Enable pagination with full pagination controls (like 1, 2, 3, 4)
-                "pagingType": "full_numbers",
-
-                // Set default page length
-                "pageLength": 5,
-
-                // Customize the layout to move pagination to the right
                 "dom": '<"top"l>rt<"bottom"ip><"clear">',
+                "paging": false,  
+                "searching": false,  
+                "ordering": true,  
+            });
+            
+            // $('#nameSearchBox').on('keyup', function () {
+            //     table.columns(1).search(this.value).draw();
+            // });
 
-            });
-            // Custom search for Name (Title) column
-            $('#nameSearchBox').on('keyup', function () {
-                table.columns(1).search(this.value).draw(); // Column 1 corresponds to Name/Title
-            });
+            // // Custom search for Email column
+            // $('#EmailSearchbox').on('keyup', function () {
+            //     table.columns(2).search(this.value).draw(); // Column 2 corresponds to Email
+            // });     
+            // $('#MobileSearchbox').on('keyup', function () {
+            //     table.columns(3).search(this.value).draw(); // Column 1 corresponds to Name/Title
+            // });
 
-            // Custom search for Email column
-            $('#EmailSearchbox').on('keyup', function () {
-                table.columns(2).search(this.value).draw(); // Column 2 corresponds to Email
-            });     
-            $('#MobileSearchbox').on('keyup', function () {
-                table.columns(3).search(this.value).draw(); // Column 1 corresponds to Name/Title
-            });
-
-            // Custom search for Email column
-            $('#DobSearchbox').on('keyup', function () {
-                table.columns(4).search(this.value).draw(); // Column 2 corresponds to Email
-            });
+            // // Custom search for Email column
+            // $('#DobSearchbox').on('keyup', function () {
+            //     table.columns(4).search(this.value).draw(); // Column 2 corresponds to Email
+            // });
         });
     </script>
 
@@ -171,11 +173,48 @@
 @section style {
  
     <style>
-  
+
+        /* Change the background color of the index page */
+        body {
+            background-color: #f0f8ff; /* Light blue background color */
+        }
+
+        /* Pagination styling to ensure it's on one line */
+        .pagination ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+            .pagination ul li {
+                margin: 0 5px;
+            }
+
+                .pagination ul li a {
+                    padding: 8px 12px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    color: #007bff;
+                }
+
+                .pagination ul li.active a {
+                    background-color: #007bff;
+                    color: #fff;
+                }
+
+                .pagination ul li a:hover {
+                    background-color: #ddd;
+                    color: #007bff;
+                }
+
         .custom-border {
             border: 2px solid #686868;
             border-collapse: collapse;
         }
+
+        /* Existing custom styles */
         .search-container {
             margin-bottom: 20px;
             display: flex;
@@ -184,9 +223,9 @@
 
         .search-box {
             border: 2px solid #ccc;
-            / Border around the search box / border-radius: 10px;
-            / Rounded corners / padding: 10px;
-            / Padding inside the box / display: flex;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
@@ -201,7 +240,6 @@
 
         .form-control {
             width: calc(100% / 5 - 15px);
-            / Adjust input field width /
         }
 
         .search-btn {
@@ -217,4 +255,5 @@
     <link href="~/lib/datatables/css/jquery.datatables.css" rel="stylesheet" />
     <link href="~/lib/datatables/css/jquery.datatables.min.css" rel="stylesheet" />
     <link href="~/lib/datatables/css/jquery.datatables_themeroller.css" rel="stylesheet" />
+    
 }

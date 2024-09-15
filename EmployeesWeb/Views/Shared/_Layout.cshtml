@@ -17,10 +17,10 @@
      
     </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid " >
         <div class="row">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar custom-border">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light-custom sidebar custom-border">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -44,7 +44,7 @@
             </nav>
 
             <!-- Main content -->
-            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 custom-border">
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 custom-border bg-color-custom text-bg-light">
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
@@ -72,12 +72,14 @@
             border-collapse: collapse;
         }
 
+    
+
         #sidebar .nav-link {
             padding: 10px;
         }
 
             #sidebar .nav-link.active {
-                background-color: #f8f9fa;
+                background-color: #fafafa;
                 font-weight: bold;
             }
     </style>

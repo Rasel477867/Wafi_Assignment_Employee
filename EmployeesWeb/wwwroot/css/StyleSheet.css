@@ -434,6 +434,7 @@ table {
     border-collapse: collapse;
 }
 
+
 caption {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -14558,4 +14559,11 @@ textarea.form-control-lg {
 [data-bs-theme=dark] .popover-header,
 [data-bs-theme=dark] .toast-header {
     color: #fff;
+}
+.bg-light-custom {
+    background-color: #1C646D;
+    color:bisque
+}
+.bg-color-custom {
+    background-color: #CEF09D;
 }

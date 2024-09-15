@@ -16,3 +16,21 @@ D:\Wafi_solution\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\refint\Emp
 D:\Wafi_solution\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.pdb
 D:\Wafi_solution\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.genruntimeconfig.cache
 D:\Wafi_solution\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\ref\EmployeesRepository.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesRepository.deps.json
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesRepository.runtimeconfig.json
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesRepository.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesRepository.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesCore.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\bin\Debug\net8.0\EmployeesCore.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.csproj.AssemblyReference.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.AssemblyInfoInputs.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.AssemblyInfo.cs
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.csproj.CoreCompileInputs.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.sourcelink.json
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.csproj.CopyComplete
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\refint\EmployeesRepository.dll
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.pdb
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\EmployeesRepository.genruntimeconfig.cache
+D:\New folder (5)\Wafi_Assignment\EmployeesRepository\obj\Debug\net8.0\ref\EmployeesRepository.dll

@@ -2,6 +2,7 @@
 using EmployeesRepository.Contacts;
 using EmployeesRepository.Core;
 using EmployeesRepository.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,19 @@ namespace EmployeesRepository
 {
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        private readonly ApplicationDbContext _dbcontext;
+        private readonly ApplicationDbContext _context;
         public EmployeeRepository(ApplicationDbContext db) : base(db)
         {
-            _dbcontext = db;
+            _context = db;
         }
+
+        public IQueryable<Employee> GetEmployeesAsync()
+        {
+            var query = _context.Employees.AsQueryable();
+            return query;
+
+        }
+
+
     }
 }
